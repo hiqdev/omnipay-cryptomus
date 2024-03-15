@@ -1,0 +1,69 @@
+{
+    "name": "hiqdev/omnipay-cryptomus",
+    "type": "library",
+    "description": "Cryptomus driver for Omnipay PHP payment libray",
+    "keywords": [
+        "omnipay",
+        "cryptomus",
+        "php",
+        "merchant",
+        "payment"
+    ],
+    "homepage": "https://github.com/hiqdev/omnipay-cryptomus",
+    "license": "MIT",
+    "support": {
+        "email": "support@hiqdev.com",
+        "source": "https://github.com/hiqdev/omnipay-cryptomus",
+        "issues": "https://github.com/hiqdev/omnipay-cryptomus/issues",
+        "wiki": "https://github.com/hiqdev/omnipay-cryptomus/wiki"
+    },
+    "authors": [
+        {
+            "name": "Andrii Vasyliev",
+            "role": "Project lead",
+            "email": "sol@hiqdev.com",
+            "homepage": "https://hipanel.com/"
+        },
+        {
+            "name": "Dmytro Naumenko",
+            "role": "Lead backend developer",
+            "email": "d.naumenko.a@gmail.com",
+            "homepage": "https://silverfire.me/"
+        },
+        {
+            "name": "Andrey Klochok",
+            "role": "Lead frontend developer",
+            "email": "andreyklochok@gmail.com",
+            "homepage": "https://hiqdev.com/"
+        },
+        {
+            "name": "Yuriy Myronchuk",
+            "role": "QA Lead",
+            "email": "bladeroot@gmail.com",
+            "homepage": "https://hiqdev.com/"
+        }
+    ],
+    "require": {
+        "omnipay/common": "^3.2",
+        "cryptomus/api-php-sdk": "^1.0"
+    },
+    "require-dev": {
+        "omnipay/tests": "^4.0"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "3.0.x-dev"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Omnipay\\Cryptomus\\": "src",
+            "Omnipay\\Cryptomus\\Tests\\": "tests"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "hiqdev/composer-config-plugin": true
+        }
+    }
+}
