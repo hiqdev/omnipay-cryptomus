@@ -44,11 +44,13 @@
         }
     ],
     "require": {
+        "php": ">=7.2",
         "omnipay/common": "^3.2",
-        "cryptomus/api-php-sdk": "^1.0"
     },
     "require-dev": {
-        "omnipay/tests": "^4.0"
+        "omnipay/tests": "^4.0",
+        "symfony/http-client": "^7.0",
+        "http-interop/http-factory-guzzle": "^1.2",
     },
     "extra": {
         "branch-alias": {
@@ -63,7 +65,8 @@
     },
     "config": {
         "allow-plugins": {
-            "hiqdev/composer-config-plugin": true
+            "hiqdev/composer-config-plugin": true,
+            "php-http/discovery": true
         }
     }
 }
