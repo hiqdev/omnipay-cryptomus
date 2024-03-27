@@ -49,7 +49,7 @@
     },
     "require-dev": {
         "omnipay/tests": "^4.0",
-        "symfony/http-client": "^7.0",
+        "symfony/http-client": "^6.4",
         "http-interop/http-factory-guzzle": "^1.2"
     },
     "extra": {
