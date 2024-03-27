@@ -45,7 +45,7 @@
     ],
     "require": {
         "php": ">=7.2",
-        "omnipay/common": "^3.2",
+        "omnipay/common": "^3.2"
     },
     "require-dev": {
         "omnipay/tests": "^4.0",
