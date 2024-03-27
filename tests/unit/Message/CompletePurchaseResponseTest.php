@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace Omnipay\Cryptomus\Tests\Message;
 
+use DateTime;
 use InvalidArgumentException;
 use Omnipay\Cryptomus\Message\CompletePurchaseRequest;
 use Omnipay\Cryptomus\Message\CompletePurchaseResponse;
@@ -45,7 +46,7 @@ class CompletePurchaseResponseTest extends TestCase
         $this->assertEquals(0.06, $response->getFee());
         $this->assertSame('USD', $response->getCurrency());
         $this->assertSame('THgEWubVc8tPKXLJ4VZ5zbiiAK7AgqSeGH, txid: 6f0d9c8374db57cac0d806251473de754f361c83a03cd805f74aa9da3193486b', $response->getPayer());
-        $this->assertSame(1711536708, $response->getTime());
+        $this->assertEquals(new DateTime('2024-03-27 10:51:48'), $response->getTime());
     }
 
     public function testWrongSignature()

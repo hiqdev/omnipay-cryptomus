@@ -13,6 +13,8 @@ declare(strict_types=1);
 
 namespace Omnipay\Cryptomus\Message;
 
+use DateTime;
+use DateTimeZone;
 use InvalidArgumentException;
 use Omnipay\Common\Message\AbstractResponse;
 use Omnipay\Common\Message\RequestInterface;
@@ -189,11 +191,12 @@ class CompletePurchaseResponse extends AbstractResponse
     /**
      * Returns the ISO 8601 payment time.
      *
-     * @return string
+     * @return DateTime
      */
     public function getTime()
     {
-        return strtotime($this->info['updated_at']);
+        return (new DateTime($this->info['updated_at']))
+            ->setTimezone(new DateTimeZone('UTC'));
     }
 
     private function validate()
