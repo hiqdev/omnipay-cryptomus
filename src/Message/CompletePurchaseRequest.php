@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Omnipay\Cryptomus\Message;
 
+use JsonException;
 use Omnipay\Common\Exception\InvalidRequestException;
 
 /**
@@ -24,7 +25,12 @@ class CompletePurchaseRequest extends AbstractRequest
             'merchantUUID',
         );
 
-        return array_merge($this->httpRequest->toArray(), $this->httpRequest->request->all());
+        try {
+            $jsonDecodedBody = $this->httpRequest->toArray();
+        } catch (\Symfony\Component\HttpFoundation\Exception\JsonException $e) {
+        }
+
+        return array_merge($jsonDecodedBody ?? [], $this->httpRequest->request->all());
     }
 
     /**
