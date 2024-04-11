@@ -4,9 +4,6 @@ declare(strict_types=1);
 
 namespace Omnipay\Cryptomus\Message;
 
-use BitPaySDKLight\Exceptions\BitPayException;
-use BitPaySDKLight\Exceptions\InvoiceQueryException;
-use Cryptomus\Api\Payment;
 use Omnipay\Common\Exception\InvalidRequestException;
 
 /**
@@ -23,12 +20,11 @@ class CompletePurchaseRequest extends AbstractRequest
     public function getData()
     {
         $this->validate(
-            'transactionId',
             'paymentKey',
             'merchantUUID',
         );
 
-        return $this->httpRequest->request->all();
+        return array_merge($this->httpRequest->toArray(), $this->httpRequest->request->all());
     }
 
     /**
@@ -37,7 +33,6 @@ class CompletePurchaseRequest extends AbstractRequest
      * @param mixed $data The data to send
      *
      * @return CompletePurchaseResponse
-     * @throws InvoiceQueryException
      */
     public function sendData($data)
     {

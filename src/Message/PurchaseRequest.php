@@ -13,7 +13,6 @@ declare(strict_types=1);
 
 namespace Omnipay\Cryptomus\Message;
 
-use Cryptomus\Api\RequestBuilderException;
 use Omnipay\Common\Exception\InvalidRequestException;
 
 /**
@@ -56,7 +55,6 @@ class PurchaseRequest extends AbstractRequest
      * @param mixed $data The data to send
      *
      * @return PurchaseResponse
-     * @throws RequestBuilderException
      */
     public function sendData($data)
     {
